@@ -6,45 +6,44 @@ open Xamarin.Forms.Xaml
 open FStyle.Repo
 open FStyle.ViewModels
 
+
+type CategoryCell() = 
+    inherit ViewCell()
+
+    let init = 
+        let horizontalLayout = new StackLayout (Orientation=StackOrientation.Horizontal, BackgroundColor = Color.FromHex ("#eee"));
+        let left = new Label (TextColor = Color.FromHex ("#f35e20"));
+        let right = new Label (HorizontalOptions = LayoutOptions.End, TextColor = Color.FromHex ("503026"));
+
+        left.SetBinding (Label.TextProperty, "Category");
+        right.SetBinding (Label.TextProperty, "Amount");
+
+            ////add views to the view hierarchy
+        horizontalLayout.Children.Add (left);
+        horizontalLayout.Children.Add (right);
+        base.View <- horizontalLayout;
+    do init 
+
+
+
+
 // UI Class 
 type LoginPage(repo: AppRepo, cmd: string -> unit, logger: string -> unit) =
     inherit ContentPage() 
     
     //do base.LoadFromXaml(typeof<LoginPage>) |> ignore
-    
-    
-//   <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-//             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-//             x:Class="FStyle.LoginPage">
-//        <ContentPage.Padding>
-//            <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="10,0,0,10"/>
-//        </ContentPage.Padding>
-//        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-//            <StackLayout Orientation = "Horizontal" HorizontalOptions="FillAndExpand">
-//                 <Entry x:Name="employeeEntry" Placeholder="Employee name" HorizontalOptions="FillAndExpand"/>                  
-//                 <Button x:Name="addEmployeeButton" Text="Add Employee" WidthRequest="100"/>
-//            </StackLayout>
-//            <ListView x:Name="EmployeeView">
-//                <ListView.ItemTemplate>
-//                    <DataTemplate>
-//                      <ViewCell>
-//                        <ViewCell.View>
-//                          <StackLayout>
-//                            <Label Text="{Binding DisplayName}"  />
-//                          </StackLayout>
-//                        </ViewCell.View>
-//                      </ViewCell>
-//                    </DataTemplate>
-//                </ListView.ItemTemplate>
-//            </ListView>
-//    </StackLayout>
-//</ContentPage>
 
 
-    let employeeEntry = Entry(HorizontalOptions=LayoutOptions.FillAndExpand)
-    employeeEntry.Placeholder <- "Employee Name"
-    let employeeButton = Button(Text="Add Employee")
-    employeeButton.WidthRequest <- "100"
+    let createGui = 
+
+        let employeeEntry = Entry(HorizontalOptions=LayoutOptions.FillAndExpand)
+        employeeEntry.Placeholder <- "Employee Name"
+        let employeeButton = Button(Text="Add Employee")
+        employeeButton.WidthRequest <- 100.
+        let dataTemplate = DataTemplate(typeof<CategoryCell>)
+
+        let categories = ListView(ItemTemplate = dataTemplate)
+        Content <- categories
     
     
     
