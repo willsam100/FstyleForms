@@ -7,10 +7,10 @@ type LoginPageViewModel = {
     Actions: (string -> unit) list
 }
 
-let createLoginPage (data: AppData) (repo:AppRepo): LoginPageViewModel =
+let createLoginPage (data: AppData) =
 
-    let cmd name = repo.UpdateData (fun data -> 
-        let employee = {DisplayName = name}
-        Some {data with Employees = (employee :: data.Employees)} )
+    //let cmd name = repo.UpdateData (fun data -> 
+    //    let employee = {DisplayName = name}
+    //    Some {data with Employees = (employee :: data.Employees)} )
 
-    {Data = data.Employees; Actions = [cmd]}
+   data.Employees
