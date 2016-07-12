@@ -1,6 +1,6 @@
-﻿module FStyle.ViewModels
+﻿module FStyle.Core.ViewModels
 open System
-open FStyle.Repo
+open FStyle.Core.Repo
 
 type LoginPageViewModel = {
     Data : Employee list 

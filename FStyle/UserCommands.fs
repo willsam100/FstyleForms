@@ -1,5 +1,5 @@
-﻿module FStyle.UserCommands
-open FStyle.Repo
+﻿module FStyle.Core.UserCommands
+open FStyle.Core.Repo
 open System
 
 let userCommands(repo: AppRepo) (name: string) = 
