@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		     x:Class="FStyle.LoginPage">
+    <StackLayout BackgroundColor="#eee" Orientation="Vertical" Padding="10,5,5,10">
+        <Label Text="Hello" TextColor="#f35e20" />
+        <ListView  x:Name="listView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee" Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" TextColor="#f35e20" />
+                                <Label Text="{Binding Amount}" HorizontalOptions="EndAndExpand" TextColor="#503026" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+	</StackLayout>
+</ContentPage>

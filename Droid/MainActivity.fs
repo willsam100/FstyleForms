@@ -8,9 +8,9 @@ open Android.Runtime;
 open Android.Views;
 open Android.Widget;
 open Android.OS;
-open FStyle.Core
-open FStyle.Core.Repo
-open FStyle.Core.UserCommands
+open FStyle
+open FStyle.Repo
+open FStyle.UserCommands
 
 [<Activity (Label = "FStyle.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
 type MainActivity() =

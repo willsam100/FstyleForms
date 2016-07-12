@@ -1,4 +1,4 @@
-﻿namespace FStyle.Core
+﻿namespace FStyle
 
 
 type AppData = {

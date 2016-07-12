@@ -111,7 +111,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FStyle\FStyle.fsproj">
       <Project>{9A3250E1-9C51-435C-A51B-E5C4DF6D33DB}</Project>
-      <Name>FStyle.Core</Name>
+      <Name>FStyle</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />

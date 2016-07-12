@@ -1,4 +1,4 @@
-﻿module FStyle.Core.Repo
+﻿module FStyle.Repo
 
 open System.Threading.Tasks
 
